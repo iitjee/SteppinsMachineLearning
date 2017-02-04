@@ -8,7 +8,7 @@ Overview:
 - Understand how machine learning can be used to build decision trees :: Tree based Models
 
 
-Applications:
+Applications: <br/>
 Gender Detection      - Male, Female <br/>
 Weather Forecasting   - Cloudy, Sunny, Rainy <br/>
 Quant Trading         - Up day, Down day <br/>
@@ -36,5 +36,14 @@ The order in which we look at the attributes is important
 - Decision Tree Learning Algorithms (Build a single decision tree)
 - Ensemble Learning Algorithms      (Build multiple decision trees and combine their results)
 
+Choose an attribute/feature that divides the training data into homogenous subsets. <br>
+Attributes are
+- Vowel-ending? Leads to more homogenous subsets
+- Begins with K? Leads to nonhomogenous subsets
+Therefore first attribute in the decision tree would be 'Vowel-Ending'
+
+How to Measure Homogenuity?
+- Information Gain
+- Gini Impurity
 
 
