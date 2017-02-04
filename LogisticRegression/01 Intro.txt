@@ -1,0 +1,7 @@
+Logistic regression, or logit regression, or logit model is a regression model where the dependent variable (DV) is categorical.
+dependent variable = randome variable = y
+catogerical = variable should take one of the values from a known set (like enums)
+
+
+The assumption of normality is just the supposition that the underlying random variable of interest is distributed normally, or approximately so. 
+Intuitively, normality may be understood as the result of the sum of a large number of independent random events.
