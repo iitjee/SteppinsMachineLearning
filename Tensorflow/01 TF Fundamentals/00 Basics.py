@@ -1,3 +1,5 @@
+
+'''
 https://www.tensorflow.org/versions/r0.10/get_started/basic_usage
 
 To use TensorFlow you need to understand how TensorFlow:
@@ -34,6 +36,7 @@ Building the graph
   multiple graphs but not needed now)
     
     '''
+
     import tensorflow as tf
     matrix1 = tf.constant([[3., 3.]]) #Create a Constant op(node) that produces a 1x2 matrix
     matrix2 = tf.constant([[2.], [2.]]) #Create a Constant op(node) that produces a 2x1 matrix
