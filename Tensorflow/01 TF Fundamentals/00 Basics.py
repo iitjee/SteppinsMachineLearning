@@ -105,7 +105,7 @@ This just avoids to keep a variable holding the session.
 
         # Add an op to subtract 'a' from 'x'.  Run it and print the result
         sub = tf.sub(x, a)
-        print(sub.eval())
+        print(sub.eval()) #in normal mode, we've to do sess.run(sub) i.e sess object should be passed everywehre which is yucky!
         # ==> [-2. -1.]
 
         # Close the Session when we're done.
