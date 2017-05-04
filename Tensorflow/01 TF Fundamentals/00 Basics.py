@@ -37,6 +37,13 @@ Building the graph
     
     '''
 
+'''
+The assign() operation in this code is a part of the expression graph just like the add() operation, so it does not actually perform the assignment until run() executes the expression.
+
+You typically represent the parameters of a statistical model as a set of Variables. For example, you would store the weights for a neural network as a tensor in a Variable. During training you update this tensor by running a training graph repeatedly.
+'''
+
+
     import tensorflow as tf
     matrix1 = tf.constant([[3., 3.]]) #Create a Constant op(node) that produces a 1x2 matrix
     matrix2 = tf.constant([[2.], [2.]]) #Create a Constant op(node) that produces a 2x1 matrix
