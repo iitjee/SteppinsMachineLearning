@@ -80,7 +80,90 @@ Now our graph is constructed. Now follows "Launching"
         product = tf.matmul(matrix1, matrix2)
         ...
         
+''''
+'Ínteractive Usage':
+Úsually we use Session object and use its Session.run() method to execute the operations.
+But for interacrtive Py envs like iPython, use 'InteractiveSession' class, and the Tensor.eval() and Operation.run() methods.
+This just avoids to keep a variable holding the session.
+'''
+        # Enter an interactive TensorFlow Session.
+        import tensorflow as tf
+        sess = tf.InteractiveSession()
 
+        x = tf.Variable([1.0, 2.0])
+        a = tf.constant([3.0, 3.0])
 
+        # Initialize 'x' using the run() method of its initializer op.
+        x.initializer.run()
+
+        # Add an op to subtract 'a' from 'x'.  Run it and print the result
+        sub = tf.sub(x, a)
+        print(sub.eval())
+        # ==> [-2. -1.]
+
+        # Close the Session when we're done.
+        sess.close()
+        
+'''
+Tensors:
+    n-dimensional array.
+     A tensor has a static type, a rank, and a shape
+        
+    TensorFlow programs use a tensor data structure to represent all data -- only tensors are passed between operations in the computation graph. 
+'''
+    
+    
+    
+    '''
+        Variables:
+ Variables maintain state across executions of the graph.  
+ '''
+    #Following example shows a variable which acts as a simple counter
+# Create a Variable, that will be initialized to the scalar value 0.
+    state = tf.Variable(0, name="counter") #generally we do `counter = tf.Variable(0, name="counter")`
+
+    # Create an Op to add one to `state`.
+
+    one = tf.constant(1)
+    new_value = tf.add(state, one)
+    update = tf.assign(state, new_value)
+    
+    '''
+    assign(
+    ref,
+    value,
+    validate_shape=None,
+    use_locking=None,
+    name=None
+    )
+   -  we've used only the first two arguments
+   -  Update 'ref' by assigning 'value' to it.
+   -  This operation outputs "ref" after the assignment is done. This makes it easier to chain operations that need to use the reset value.
+    '''
+
+    # Variables must be initialized by running an `init` Op after having
+    # launched the graph.  We first have to add the `init` Op to the graph.
+    init_op = tf.initialize_all_variables() #init_op node is added to the computational graph
+    
+
+    # Launch the graph and run the ops (nodes).
+    with tf.Session() as sess:
+# First Run the 'init' op(node)
+      sess.run(init_op) #think of this node which will be at the start of 
+    
+# Print the initial value of 'state'
+      print(sess.run(state))
+    
+# Run the op that updates 'state' and print 'state'.
+      for _ in range(3):
+        sess.run(update)  #note that during update operation everytime, sum operation is being done
+        print(sess.run(state))
+
+    # output:
+
+    # 0
+    # 1
+    # 2
+    # 3
     
     
