@@ -95,7 +95,7 @@ def model(features, labels, mode):
 # http://stackoverflow.com/questions/37098546/difference-between-variable-and-get-variable-in-tensorflow 
 # https://www.tensorflow.org/api_docs/python/tf/get_variable
 
-  b = tf.get_variable("b", [1], dtype=tf.float64) #[1] is size. it's rank-1 tensor
+  b = tf.get_variable("b", [1], dtype=tf.float64) #[1] is shape of new variable
   y = W*features['x'] + b
 
 # Loss sub-graph
@@ -103,6 +103,18 @@ def model(features, labels, mode):
     
 # Training sub-graph
   global_step = tf.train.get_global_step()
+    #get_global_step(graph=None) is the method interface
+    #arg: graph in which global step is to be found. if ntn is passed, takes defaultGraph
+    '''global_step refer to the number of batches seen by the graph. Everytime a batch is provided, the
+    weights are updated in the direction that minimizes the loss. global_step just keeps track of the number 
+    of batches seen so far. When it is passed in the minimize() argument list, the variable is increased by one. 
+    Have a look at optimizer.minimize().
+
+    You can get the global_step value using tf.train.global_step().
+    The 0 is the initial value of the global step in this context
+    '''
+    
+    
   optimizer = tf.train.GradientDescentOptimizer(0.01)
   train = tf.group(optimizer.minimize(loss),
                    tf.assign_add(global_step, 1))
