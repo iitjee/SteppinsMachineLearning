@@ -137,3 +137,11 @@ estimator.fit(input_fn=input_fn, steps=1000)
 # evaluate our model
 print(estimator.evaluate(input_fn=input_fn, steps=10))
 
+'''
+When run, it produces
+
+{'loss': 5.9819476e-11, 'global_step': 1000}
+Notice how the contents of the custom model() function are very similar to our manual model training loop from the 
+lower level API.
+
+'''
