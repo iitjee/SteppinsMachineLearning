@@ -70,3 +70,10 @@ tensor to compute a value for the new variable.
       w_twice = tf.Variable(weights.initialized_value() * 2.0, name="w_twice")
 
 
+#Custom Initialization
+The convenience function tf.global_variables_initializer() adds an op to initialize all variables in the model. 
+
+You can also pass an explicit list of variables to initialize to tf.variables_initializer
+we'll see this later
+      
+      
