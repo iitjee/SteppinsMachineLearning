@@ -33,11 +33,15 @@ https://github.com/eldor4do/TensorFlow-Examples/blob/master/retraining-example.p
 #Training on Your Own Categories:
 If you've managed to get the script working on the flower example images, you can start looking at teaching it to recognize categories 
 you care about instead. In theory all you'll need to do is point it at a set of sub-folders, each named after one of your categories and 
-containing only images from that category. If you do that and pass the root folder of the subdirectories as the argument to --image_dir, 
+containing only images from that category. 
+
+If you do that and pass the root folder of the subdirectories as the argument to --image_dir, 
 the script should train just like it did for the flowers.
 
 
-
+In practice it may take some work to get the accuracy you want. I'll try to guide you through some of the common problems you might 
+encounter below.
+..TODO.. REMAINING
 
 
 
