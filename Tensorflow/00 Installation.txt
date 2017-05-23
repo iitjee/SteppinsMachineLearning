@@ -13,3 +13,9 @@ IMP: change the file name in bin folder to cudnn64_6 to cudnn64_5. else, it won'
 - type ipython3 to get an interactive ipynb console
 - to open an ipynb file, type `ipython noteobok myfile.ipynb` (note to enter into python3.5 environment)
 
+
+
+
+for macOS
+they've stopped support from cudNN 6 onwards. you've to build manually from source.
+so download cudNN5 and paste corresponding dir files in /usr/local/cuda  (there's one more similar CUDA dir somewhere but it's of NO damn use)
