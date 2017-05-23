@@ -13,27 +13,27 @@ To use TensorFlow you need to understand how TensorFlow:
     
 computations represented as  graphs.
 
-Nodes in the graph are called ops (short for operations). An 'op'(node) takes zero or more Tensors, performs some computation, and 
-produces Tensors.
+Nodes in the graph are called ops (short for operations). An 'op'(node) takes zero or more Tensors, performs some 
+computation, and produces Tensors.
 
-   A Tensor is a typed multi-dimensional array. For example, you can represent a mini-batch of images as a 4-D array of floating point 
-   numbers with dimensions [batch, height, width, channels]. 
+   A Tensor is a typed multi-dimensional array. For example, you can represent a mini-batch of images as a 4-D array of 
+   floating point numbers with dimensions [batch, height, width, channels]. 
     
  A TensorFlow graph is a "description" of computations.
  
- To compute anything, a graph must be launched in a Session. A Session places the graph ops(nodes) onto Devices, such as CPUs or GPUs, and 
- provides methods to execute them. These methods return tensors produced by ops as numpy ndarray objects in Python, and as 
- tensorflow::Tensor instances in C and C++   
+ To compute anything, a graph must be launched in a Session. A Session places the graph ops(nodes) onto Devices, such as 
+ CPUs or GPUs, and provides methods to execute them. These methods return tensors produced by ops as numpy ndarray objects 
+ in Python, and as  tensorflow::Tensor instances in C and C++   
         ndarray = n-dimension array
     
 
 
 Building the graph
-  To build a graph start with ops(nodes) that do not need any input (source ops), such as Constant, and pass their output to other
-  ops (nodes) that do computation.
+  To build a graph start with ops(nodes) that do not need any input (source ops), such as Constant, and pass their output to 
+  other ops (nodes) that do computation.
     
-  The TensorFlow Python library has a default graph to which ops constructors(node-makers) add nodes. (you can also explicitly manage
-  multiple graphs but not needed now)
+  The TensorFlow Python library has a default graph to which ops constructors(node-makers) add nodes. (you can also 
+  explicitly managemultiple graphs but not needed now)
     
     '''
 
@@ -49,8 +49,8 @@ You typically represent the parameters of a statistical model as a set of Variab
     matrix2 = tf.constant([[2.], [2.]]) #Create a Constant op(node) that produces a 2x1 matrix
     product = tf.matmul(matrix1, matrix2)
     
-    The default graph now has three nodes: two constant() ops(nodes) and one matmul() op(node). To actually multiply the matrices, and 
-    get the result of the multiplication, you must launch the graph in a session.
+    The default graph now has three nodes: two constant() ops(nodes) and one matmul() op(node). To actually multiply the 
+matrices, and get the result of the multiplication, you must launch the graph in a session.
     
 Now our graph is constructed. Now follows "Launching"
     # Launch the default graph.
@@ -145,7 +145,8 @@ Tensors:
     )
    -  we've used only the first two arguments
    -  Update 'ref' by assigning 'value' to it.
-   -  This operation outputs "ref" after the assignment is done. This makes it easier to chain operations that need to use the reset value.
+   -  This operation outputs "ref" after the assignment is done. This makes it easier to chain operations that need to use 
+   the reset value.
     '''
 
     # Variables must be initialized by running an `init` Op after having
