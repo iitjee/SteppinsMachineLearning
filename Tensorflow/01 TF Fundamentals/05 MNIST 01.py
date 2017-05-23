@@ -44,3 +44,16 @@ Using small batches of random data is called stochastic training -- in this case
 like to use all our data for every step of training because that would give us a better sense of what we should be doing, 
 but that's expensive. So, instead, we use a different subset every time. Doing this is cheap and has much of the same 
 benefit.
+
+
+
+
+
+
+
+nielsen book (chap 3)
+(improve on our vanilla implementation of backpropagation) vanilla implem = basic implem?
+
+It's that steepness which the cross-entropy buys us, preventing us from getting stuck just when we'd expect our
+neuron to learn fastest, i.e., when the neuron starts out badly wrong.
+
